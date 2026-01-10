@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kokan Swad | Pure Mango Taste</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
-      --mango-yellow: #1cb317;
-      --mango-orange: #fb8c00; /* Adjusted for better visibility */
+      --mango-yellow: #FFC107;
+      --mango-orange: #fb8c00;
       --leaf-green: #2E7D32;
       --dark-text: #333;
       --light-bg: #FFF8E1;
@@ -22,260 +22,257 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, var(--light-bg), #fff);
+      background: var(--light-bg);
       color: var(--dark-text);
-      overflow-x: hidden;
+      /* Header साठी वरती जागा सोडली आहे */
+      padding-top: 120px; 
     }
 
-    /* --- HEADER & NAVIGATION --- */
+    /* --- FIXED PROFESSIONAL HEADER --- */
     header {
       background: linear-gradient(90deg, var(--mango-yellow), var(--mango-orange));
-      padding: 10px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
       z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      padding: 12px 10px;
     }
 
-    .logo-container {
+    .logo-area {
       display: flex;
       align-items: center;
-      gap: 12px;
-      flex: 1;
+      justify-content: center;
+      margin-bottom: 12px;
     }
 
-    .logo-container img {
-      width: 50px;
-      height: 50px;
+    .logo-area img {
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: white;
-      padding: 3px;
+      padding: 2px;
+      margin-right: 10px;
     }
 
-    .brand-text h1 {
+    .logo-area h1 {
       color: #fff;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
-      line-height: 1.2;
+      letter-spacing: 0.5px;
     }
 
-    .brand-text p {
-      color: #fff;
-      font-size: 11px;
-      opacity: 0.9;
-    }
-
-    /* Desktop Nav */
+    /* --- BUTTON NAVIGATION (ALWAYS VISIBLE) --- */
     nav {
       display: flex;
-      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     nav a {
-      margin-left: 20px;
       text-decoration: none;
       color: #fff;
-      font-weight: 500;
-      font-size: 15px;
-      transition: 0.3s;
-    }
-
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      color: white;
-      cursor: pointer;
-    }
-
-    /* --- SECTIONS --- */
-    .section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section h3 {
+      font-weight: 600;
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.25);
+      padding: 8px 0;
+      border-radius: 50px; /* Capsule shape */
+      flex: 1; 
       text-align: center;
-      font-size: 28px;
-      color: var(--leaf-green);
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    nav a.active {
+      background: #fff;
+      color: var(--mango-orange);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* --- CONTENT --- */
+    .hero-section {
+      text-align: center;
+      padding: 20px;
       margin-bottom: 20px;
     }
 
-    .section p {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 15px auto;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    /* Social Media Grid */
-    .socials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .social-card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
-
-    .social-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .social-card i {
-      font-size: 35px;
+    .hero-section h2 {
+      color: var(--leaf-green);
+      font-size: 26px;
       margin-bottom: 10px;
     }
 
-    .youtube { color: #FF0000; }
-    .instagram { color: #E1306C; }
-    .facebook { color: #1877F2; }
-    .google { color: #34A853; }
+    .hero-section p {
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-    .social-card h4 { font-size: 16px; margin-bottom: 5px; }
-    .social-card a { text-decoration: none; color: var(--leaf-green); font-weight: 600; font-size: 14px; }
+    /* --- SOCIAL MEDIA (ONE BY ONE) --- */
+    .social-section {
+      padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .social-section h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--mango-orange);
+      font-size: 22px;
+    }
+
+    .social-list {
+      display: flex;
+      flex-direction: column; /* एकाखाली एक येण्यासाठी */
+      gap: 15px;
+    }
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 15px;
+      text-decoration: none;
+      color: var(--dark-text);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: 0.3s;
+      border-left: 5px solid transparent;
+    }
+
+    .social-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .social-item i {
+      font-size: 28px;
+      margin-right: 20px;
+      width: 35px;
+      text-align: center;
+    }
+
+    /* Icon Colors */
+    .yt-icon { color: #FF0000; border-color: #FF0000; }
+    .ig-icon { color: #E1306C; border-color: #E1306C; }
+    .fb-icon { color: #1877F2; border-color: #1877F2; }
+    .gs-icon { color: #34A853; border-color: #34A853; }
+
+    .social-info h4 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .social-info span {
+      font-size: 12px;
+      color: #777;
+    }
 
     footer {
       background: var(--leaf-green);
       color: #fff;
-      padding: 30px 20px;
       text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
     }
 
-    /* --- MOBILE RESPONSIVE LOGIC --- */
-    @media (max-width: 850px) {
-      .menu-toggle {
-        display: block;
+    /* --- DESKTOP VIEW --- */
+    @media (min-width: 850px) {
+      body { padding-top: 90px; }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 8%;
       }
-
-      nav {
-        position: absolute;
-        top: 70px;
-        right: -100%;
-        background: #fff;
-        width: 250px;
-        height: calc(100vh - 70px);
-        flex-direction: column;
-        padding: 40px 20px;
-        transition: 0.4s;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-      }
-
-      nav.active {
-        right: 0;
-      }
-
-      nav a {
-        color: var(--dark-text);
-        margin: 15px 0;
-        font-size: 18px;
-        width: 100%;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 10px;
-      }
-
-      .brand-text h5, .brand-text h6 {
-        display: none; /* Hide sub-titles on mobile to save space */
-      }
+      .logo-area { margin-bottom: 0; }
+      nav { flex: none; width: 400px; gap: 10px; }
+      nav a { padding: 10px 20px; font-size: 15px; }
       
-      .brand-text h1 {
-        font-size: 18px;
+      .social-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* डेस्कटॉपवर २ कॉलम */
+        max-width: 900px;
       }
+      .social-section { max-width: 900px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo-container">
+    <div class="logo-area">
       <img src="kokanswadlogo.png" alt="Kokan Swad Logo">
-      <div class="brand-text">
-        <h1>कोकण स्वाद</h1>
-        <p style="color : rgb(255, 220, 24)"><b>कोकण स्वाद बाय जाधव बंधू |</b></p> 
-        <p style="color : rgb(238, 255, 6)">"जिथे चव, विश्वास आणि निसर्ग एकत्र येतो."</p>
-      </div>
+      <h1>कोकण स्वाद</h1>
     </div>
 
-    <div class="menu-toggle" id="mobile-menu">
-      <i class="fas fa-bars"></i>
-    </div>
-
-    <nav id="nav-list">
-      <a href="index.html">Home</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="photos.html">Photos</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="section" id="about">
-    <h3>शेतकरी ते ग्राहक...</h3>
+  <section class="hero-section">
+    <h2>शेतकरी ते ग्राहक...</h2>
     <p>
-      <b>कोकण स्वाद</b> हा एक प्रीमियम आंबा ब्रँड आहे जो तुम्हाला कोकणची खरी चव देतो. आम्ही नैसर्गिकरित्या पिकवलेले आंबे शुद्ध ताजेपणा आणि विश्वासाने वितरित करतो.
-    </p>
-    <p>
-      <b>कोकण स्वाद</b> – कोकणची खरी चव, थेट तुमच्या घरात.
+      <b>कोकण स्वाद</b> हा एक प्रीमियम आंबा ब्रँड आहे. आम्ही नैसर्गिकरित्या पिकवलेले अस्सल देवगड आणि रत्नागिरी हापूस आंबे थेट तुमच्या घरापर्यंत पोहोचवतो.
     </p>
   </section>
 
-  <section class="section" id="social">
+  <section class="social-section">
     <h3>Connect With Us</h3>
-    <div class="socials">
-      <div class="social-card">
-        <i class="fab fa-youtube youtube"></i>
-        <h4>YouTube</h4>
-        <a href="https://www.youtube.com/@KokanSwad-t3z" target="_blank">Visit</a>
-      </div>
-      <div class="social-card">
-        <i class="fab fa-instagram instagram"></i>
-        <h4>Instagram</h4>
-        <a href="https://www.instagram.com/kokan_swad_by_jadhav_bandhu" target="_blank">Follow</a>
-      </div>
-      <div class="social-card">
-        <i class="fab fa-facebook facebook"></i>
-        <h4>Facebook</h4>
-        <a href="https://www.facebook.com/share/17iU6Wz3hx/" target="_blank">Like</a>
-      </div>
-      <div class="social-card">
-        <i class="fab fa-google google"></i>
-        <h4>Google</h4>
-        <a href="https://share.google/hddnd6HDmCNxmkbWX" target="_blank">View</a>
-      </div>
+    
+    <div class="social-list">
+      
+      <a href="https://www.youtube.com/@KokanSwad-t3z" class="social-item yt-icon" target="_blank">
+        <i class="fab fa-youtube"></i>
+        <div class="social-info">
+          <h4>YouTube</h4>
+          <span>आमचे नवीन व्हिडिओ पहा</span>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/kokan_swad_by_jadhav_bandhu" class="social-item ig-icon" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <div class="social-info">
+          <h4>Instagram</h4>
+          <span>नवीन अपडेट्ससाठी फॉलो करा</span>
+        </div>
+      </a>
+
+      <a href="https://www.facebook.com/share/17iU6Wz3hx/" class="social-item fb-icon" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+        <div class="social-info">
+          <h4>Facebook</h4>
+          <span>आमच्या पेजला लाईक करा</span>
+        </div>
+      </a>
+
+      <a href="https://share.google/hddnd6HDmCNxmkbWX" class="social-item gs-icon" target="_blank">
+        <i class="fab fa-google"></i>
+        <div class="social-info">
+          <h4>Google Business</h4>
+          <span>आमचे रिव्ह्यूज वाचा</span>
+        </div>
+      </a>
+
     </div>
   </section>
 
   <footer>
-    <p>© 2026 <b>Kokan Swad</b> | शेतकरी ते ग्राहक...</p>
+    <p>© 2026 <b>कोकण स्वाद बाय जाधव बंधू</b></p>
+    <p style="font-size: 12px; margin-top: 5px; opacity: 0.8;">जिथे चव, विश्वास आणि निसर्ग एकत्र येतो.</p>
   </footer>
-
-  <script>
-    const menuToggle = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-
-    menuToggle.addEventListener('click', () => {
-      navList.classList.toggle('active');
-      // Change icon from Bars to X
-      const icon = menuToggle.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
-    });
-  </script>
 
 </body>
 </html>
