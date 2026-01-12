@@ -1,101 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photos | Kokan Swad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    :root {
+      --mango-yellow: #FFC107;
+      --mango-orange: #FF9800;
+      --leaf-green: #2E7D32;
+      --dark-text: #333;
+      --light-bg: #FFF8E1;
+    }
+
+    * {
       margin: 0;
-      background: #FFF8E1;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
     }
 
+    body {
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    /* --- MASTER HEADER (Universal Style) --- */
     header {
-      background: #161102;
-      padding: 15px 40px;
+      background: linear-gradient(90deg, var(--mango-yellow), var(--mango-orange));
+      padding: 15px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    header h1 {
+    @media (min-width: 992px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 60px;
+      }
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-area img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: white;
+      padding: 2px;
+      border: 2px solid #fff;
+    }
+
+    .brand-info h1 {
       color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .brand-info .tagline-main {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      display: block;
+    }
+
+    .brand-info .tagline-sub {
+      color: #fffde7;
+      font-size: 10px;
+      font-style: italic;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
     }
 
     nav a {
-      color: #fff;
-      margin-left: 20px;
       text-decoration: none;
+      color: var(--leaf-green);
+      background: #fff;
+      padding: 7px 18px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      background: var(--leaf-green);
+      color: #fff;
+    }
+
+    /* --- PHOTO GALLERY HERO --- */
+    .gallery-hero {
+      height: 30vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1591073113125-e46713c829ed?q=80&w=1974&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .gallery-hero h2 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    /* --- GALLERY GRID --- */
+    .gallery-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .gallery {
-      max-width: 1100px;
-      margin: 60px auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      padding: 20px;
     }
 
     .gallery img {
       width: 100%;
-      height: 220px;
+      height: 280px;
       object-fit: cover;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      border: 5px solid white;
     }
 
     .gallery img:hover {
-      transform: scale(1.05);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border-color: var(--mango-yellow);
     }
 
+    /* --- FOOTER --- */
     footer {
-      background: #2E7D32;
+      background: var(--leaf-green);
       color: #fff;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 30px;
+      margin-top: 60px;
+    }
+
+    footer span {
+      color: var(--mango-yellow);
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>कोकण स्वाद</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo-area">
+      <img src="kokanswadlogo.png" alt="Kokan Swad Logo">
+      <div class="brand-info">
+        <h1>कोकण स्वाद</h1>
+        <span class="tagline-main">कोकण स्वाद बाय जाधव बंधू</span>
+        <span class="tagline-sub">"जिथे चव, विश्वास आणि निसर्ग एकत्र येतो."</span>
+      </div>
+    </div>
 
-<section class="gallery">
-  <!-- Replace image paths with your real mango photos -->
-    <img src="1000090298.png" alt="Mango">
-     <img src="1000090299.jpg" alt="Mango">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="photos.html" class="active">Photos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="gallery-hero">
+    <h2>आमची गॅलरी</h2>
+    <p>आमच्या बागेतील काही खास क्षण आणि अस्सल हापूस</p>
+  </section>
+
+  <div class="gallery-container">
+    <section class="gallery">
+      <img src="1000090298.png" alt="Mango">
+      <img src="1000090299.jpg" alt="Mango">
       <img src="1000090300.jpg" alt="Mango">
+      <img src="1000090283.jpg" alt="Mango">
+      <img src="1000090284.jpg" alt="Mango">
+      <img src="1000090285.jpg" alt="Mango">
+      <img src="1000090286.jpg" alt="Mango">
+      <img src="1000090287.jpg" alt="Mango">
+      <img src="1000090278.jpg" alt="Mango">
+      <img src="1000090279.jpg" alt="Mango">
+      <img src="1000090280.jpg" alt="Mango">
+      <img src="1000090281.jpg" alt="Mango">
+      <img src="1000090282.jpg" alt="Mango">
+    </section>
+  </div>
 
-  <img src="1000090283.jpg" alt="Mango">
-  <img src="1000090284.jpg" alt="Mango">
-  <img src="1000090285.jpg" alt="Mango">
-  <img src="1000090286.jpg" alt="Mango">
-   <img src="1000090287.jpg" alt="Mango">
-  <img src="1000090278.jpg" alt="Mango">
-  <img src="1000090279.jpg" alt="Mango">
-  <img src="1000090280.jpg" alt="Mango">
-  <img src="1000090281.jpg" alt="Mango">
-  <img src="1000090282.jpg" alt="Mango">
-  
-</section>
-
-<footer>
-  © 2025 Kokan Swad | Mango Gallery
-</footer>
+  <footer>
+    <p>© 2026 <span>Kokan Swad</span> | अस्सल कोकणी चव, थेट तुमच्या घरी.</p>
+  </footer>
 
 </body>
 </html>
-
-
