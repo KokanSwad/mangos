@@ -6,13 +6,12 @@
   <title>Kokan Swad | Pure Mango Taste</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
       --mango-yellow: #FFC107;
-      --mango-orange: #FF9800; /* Adjusted for better visibility than pure black */
+      --mango-orange: #FF9800;
       --leaf-green: #2E7D32;
       --dark-text: #333;
       --light-bg: #FFF8E1;
@@ -26,27 +25,30 @@
     }
 
     body {
-      background: linear-gradient(135deg, var(--light-bg), #fff);
+      background-color: var(--light-bg);
       color: var(--dark-text);
+      line-height: 1.6;
     }
 
-    /* --- MODIFIED PROFESSIONAL HEADER --- */
+    /* --- MASTER HEADER (Copy to all pages) --- */
     header {
       background: linear-gradient(90deg, var(--mango-yellow), var(--mango-orange));
-      padding: 20px;
+      padding: 15px 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    /* Desktop Layout Improvement */
     @media (min-width: 992px) {
       header {
         flex-direction: row;
         justify-content: space-between;
-        padding: 15px 50px;
+        padding: 10px 60px;
       }
     }
 
@@ -54,145 +56,138 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      text-align: left;
     }
 
     .logo-area img {
-      width: 65px;
-      height: 65px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       background: white;
-      padding: 3px;
+      padding: 2px;
       border: 2px solid #fff;
     }
 
     .brand-info h1 {
       color: #fff;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
-      line-height: 1;
+      line-height: 1.1;
     }
 
     .brand-info .tagline-main {
       color: #fff;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       display: block;
-      margin-top: 4px;
     }
 
     .brand-info .tagline-sub {
-      color: #ffff00;
-      font-size: 11px;
+      color: #fffde7;
+      font-size: 10px;
       font-style: italic;
       display: block;
     }
 
-    /* Navigation Buttons */
     nav {
       display: flex;
       gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
     }
 
     nav a {
       text-decoration: none;
       color: var(--leaf-green);
       background: #fff;
-      padding: 8px 16px;
-      border-radius: 20px;
+      padding: 7px 18px;
+      border-radius: 25px;
       font-weight: 600;
       font-size: 14px;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover, nav a.active {
       background: var(--leaf-green);
       color: #fff;
-      transform: translateY(-2px);
     }
 
-    /* --- END HEADER CSS --- */
+    /* --- HERO SECTION --- */
+    .hero {
+      height: 60vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                  url('https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=1974&auto=format&fit=crop'); 
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
 
-    /* About */
+    .hero-content {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.3);
+      max-width: 700px;
+    }
+
+    .hero-content h2 { font-size: 36px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+
+    /* --- SECTIONS --- */
     .section {
-      padding: 70px 20px;
+      padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
     .section h3 {
       text-align: center;
-      font-size: 32px;
+      font-size: 28px;
       color: var(--leaf-green);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      position: relative;
     }
 
-    .section p {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-      font-size: 16px;
-      line-height: 1.7;
+    .section h3::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: var(--mango-orange);
+        margin: 10px auto;
     }
 
-    /* Social Media */
+    /* Social Cards */
     .socials {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
 
     .social-card {
       background: #fff;
-      border-radius: 18px;
-      padding: 30px 20px;
+      border-radius: 15px;
+      padding: 25px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: 0.3s;
     }
 
-    .social-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-    }
-
-    .social-card i {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+    .social-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .social-card i { font-size: 40px; margin-bottom: 15px; }
 
     .youtube { color: #FF0000; }
     .instagram { color: #E1306C; }
     .facebook { color: #1877F2; }
     .google { color: #34A853; }
 
-    .social-card h4 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .social-card a {
-      text-decoration: none;
-      color: var(--leaf-green);
-      font-weight: 600;
-    }
-
-    /* Footer */
     footer {
       background: var(--leaf-green);
       color: #fff;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
-      margin-top: 60px;
-    }
-
-    footer span {
-      color: var(--mango-yellow);
-      font-weight: 600;
     }
   </style>
 </head>
@@ -209,20 +204,23 @@
     </div>
 
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="photos.html">Photos</a>
-      <a href="contact .html">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
+  <section class="hero">
+    <div class="hero-content">
+        <h2>कोकणचा राजा, आता तुमच्या दारी!</h2>
+        <p>Experience the authentic taste of Konkan Alphonso Mangoes.</p>
+    </div>
+  </section>
 
   <section class="section" id="about">
     <h3>शेतकरी ते ग्राहक...</h3>
-    <p>
-    <b>कोकण स्वाद</b> हा एक प्रीमियम आंबा ब्रँड आहे जो तुम्हाला कोकणची खरी चव देतो. आम्ही नैसर्गिकरित्या पिकवलेले आंबे शुद्ध ताजेपणा आणि विश्वासाने वितरित करतो.
-    </p>
-     <p>
-    <b>कोकण स्वाद</b> – कोकणची खरी चव, थेट तुमच्या घरात.
+    <p style="text-align: center; max-width: 800px; margin: auto;">
+      <b>कोकण स्वाद</b> हा एक प्रीमियम आंबा ब्रँड आहे जो तुम्हाला कोकणची खरी चव देतो. आम्ही नैसर्गिकरित्या पिकवलेले आंबे शुद्ध ताजेपणा आणि विश्वासाने वितरित करतो.
     </p>
   </section>
 
@@ -232,32 +230,33 @@
       <div class="social-card">
         <i class="fab fa-youtube youtube"></i>
         <h4>YouTube</h4>
-        <a href="https://www.youtube.com/@KokanSwad-t3z" target="_blank">Visit Channel</a>
+        <a href="https://www.youtube.com/@KokanSwad-t3z" target="_blank" style="text-decoration:none; color:var(--leaf-green); font-weight:bold;">Visit Channel</a>
       </div>
 
       <div class="social-card">
         <i class="fab fa-instagram instagram"></i>
         <h4>Instagram</h4>
-        <a href="https://www.instagram.com/kokan_swad_by_jadhav_bandhu" target="_blank">Follow Us</a>
+        <a href="https://www.instagram.com/kokan_swad_by_jadhav_bandhu" target="_blank" style="text-decoration:none; color:var(--leaf-green); font-weight:bold;">Follow Us</a>
       </div>
 
       <div class="social-card">
         <i class="fab fa-facebook facebook"></i>
         <h4>Facebook</h4>
-        <a href="https://www.facebook.com/share/17iU6Wz3hx/" target="_blank">Like Page</a>
+        <a href="https://www.facebook.com/share/17iU6Wz3hx/" target="_blank" style="text-decoration:none; color:var(--leaf-green); font-weight:bold;">Like Page</a>
       </div>
 
       <div class="social-card">
         <i class="fab fa-google google"></i>
         <h4>Google Business</h4>
-        <a href="https://share.google/hddnd6HDmCNxmkbWX" target="_blank">View Profile</a>
+        <a href="https://share.google/hddnd6HDmCNxmkbWX" target="_blank" style="text-decoration:none; color:var(--leaf-green); font-weight:bold;">View Profile</a>
       </div>
     </div>
   </section>
 
-  <footer id="contact">
+  <footer>
     <p>© 2026 <span>Kokan Swad</span> | शेतकरी ते ग्राहक...</p>
   </footer>
 
 </body>
 </html>
+
