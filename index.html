@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kokan Swad | Pure Mango Taste</title>
+  <title>Photos | Kokan Swad</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -21,7 +21,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
     }
 
     body {
@@ -30,7 +30,7 @@
       line-height: 1.6;
     }
 
-    /* --- MASTER HEADER (Copy to all pages) --- */
+    /* --- MASTER HEADER (Universal Style) --- */
     header {
       background: linear-gradient(90deg, var(--mango-yellow), var(--mango-orange));
       padding: 15px 20px;
@@ -109,85 +109,67 @@
       color: #fff;
     }
 
-    /* --- HERO SECTION --- */
-   .hero {
-  height: 60vh;
-  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
-              url('https://images.unsplash.com/photo-1591073113125-e46713c829ed?q=80&w=1974&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-    .hero-content {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
-      padding: 30px;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.3);
-      max-width: 700px;
-    }
-
-    .hero-content h2 { font-size: 36px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-
-    /* --- SECTIONS --- */
-    .section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section h3 {
+    /* --- PHOTO GALLERY HERO --- */
+    .gallery-hero {
+      height: 30vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1591073113125-e46713c829ed?q=80&w=1974&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
       text-align: center;
-      font-size: 28px;
-      color: var(--leaf-green);
-      margin-bottom: 25px;
-      position: relative;
     }
 
-    .section h3::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 3px;
-        background: var(--mango-orange);
-        margin: 10px auto;
+    .gallery-hero h2 {
+      font-size: 32px;
+      margin-bottom: 5px;
     }
 
-    /* Social Cards */
-    .socials {
+    /* --- GALLERY GRID --- */
+    .gallery-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
-    .social-card {
-      background: #fff;
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
       border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: 0.3s;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      border: 5px solid white;
     }
 
-    .social-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .social-card i { font-size: 40px; margin-bottom: 15px; }
+    .gallery img:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border-color: var(--mango-yellow);
+    }
 
-    .youtube { color: #FF0000; }
-    .instagram { color: #E1306C; }
-    .facebook { color: #1877F2; }
-    .google { color: #34A853; }
-
+    /* --- FOOTER --- */
     footer {
       background: var(--leaf-green);
       color: #fff;
-      padding: 30px 20px;
       text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+    }
+
+    footer span {
+      color: var(--mango-yellow);
+      font-weight: 600;
     }
   </style>
 </head>
@@ -204,58 +186,109 @@
     </div>
 
     <nav>
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="photos.html">Photos</a>
+      <a href="photos.html" class="active">Photos</a>
       <a href="newcontect.html">Contact</a>
     </nav>
   </header>
-  <section class="hero">
-    <div class="hero-content">
-        <h2>कोकणचा राजा, आता तुमच्या दारी!</h2>
-        <p>Experience the authentic taste of Konkan Alphonso Mangoes.</p>
+
+  <section class="gallery-hero">
+    <h2>आमची गॅलरी</h2>
+    <p>आमच्या बागेतील काही खास क्षण आणि अस्सल हापूस</p>
+  </section>
+
+<div class="gallery-container">
+
+  <!-- Harvesting Photos -->
+  <div class="section-title">
+    <h3>🥭 आंबा काढणी (Harvesting)</h3>
+    <p>निसर्गाच्या सान्निध्यातील अस्सल क्षण</p>
+  </div>
+  <section class="gallery">
+    <img src="harvest1.jpg">
+    <img src="harvest2.jpg">
+    <img src="harvest3.jpg">
+  </section>
+
+  <!-- Mango Photos -->
+  <div class="section-title">
+    <h3>🥭 हापूस आंबे</h3>
+    <p>गोड, सुगंधी आणि नैसर्गिक</p>
+  </div>
+  <section class="gallery">
+    <img src="1000090298.png">
+    <img src="1000090299.jpg">
+    <img src="1000090300.jpg">
+  </section>
+
+  <!-- Packing Photos -->
+  <div class="section-title">
+    <h3>📦 पॅकिंग प्रक्रिया</h3>
+    <p>सुरक्षित आणि स्वच्छ पॅकिंग</p>
+  </div>
+  <section class="gallery">
+    <img src="packing1.jpg">
+    <img src="packing2.jpg">
+    <img src="packing3.jpg">
+  </section>
+
+  <!-- Cutting Photos -->
+  <div class="section-title">
+    <h3>🔪 आंबा कापणी</h3>
+    <p>ताजेपणा आणि चव</p>
+  </div>
+  <section class="gallery">
+    <img src="cut1.jpg">
+    <img src="cut2.jpg">
+    <img src="cut3.jpg">
+  </section>
+
+  <!-- Eating Photos -->
+  <div class="section-title">
+    <h3>😋 आंबा खाताना</h3>
+    <p>प्रत्येक घासात आनंद</p>
+  </div>
+  <section class="gallery">
+    <img src="eat1.jpg">
+    <img src="eat2.jpg">
+    <img src="eat3.jpg">
+  </section>
+
+</div>
+
+<!-- Customer Feedback -->
+<div class="feedback-container">
+  <div class="section-title">
+    <h3>⭐ ग्राहक अभिप्राय</h3>
+    <p>आमच्या ग्राहकांचे अनुभव</p>
+  </div>
+
+  <div class="feedback-grid">
+    <div class="feedback-card">
+      <i class="fa-solid fa-quote-left"></i>
+      <p>खूपच गोड आणि नैसर्गिक हापूस. वेळेवर डिलिव्हरी मिळाली.</p>
+      <h4>- राहुल पाटील</h4>
     </div>
-  </section>
 
-  <section class="section" id="about">
-    <h3>शेतकरी ते ग्राहक...</h3>
-    <p style="text-align: center; max-width: 800px; margin: auto;">
-      <b>कोकण स्वाद</b> हा एक प्रीमियम हापूस आंबा ब्रँड आहे, जो तुम्हाला कोकणची खरी चव देतो. आम्ही <b>"सेंद्रिय पद्धतीने"</b> पिकवलेले देवगड आणि रत्नागिरी हापूस आंबे शुद्ध ताजेपणा आणि विश्वासाने वितरित करतो.
-    </p>
-  </section>
-
-  <section class="section" id="social">
-    <h3>Connect With Us</h3>
-    <div class="socials">
-      <div class="social-card">
-        <i class="fab fa-youtube youtube"></i>
-        <h4>YouTube</h4>
-        <a href="https://www.youtube.com/@KokanSwad-t3z" target="_blank" style="text-decoration:none; color:var(--leaf-green); font-weight:bold;">Visit Channel</a>
-      </div>
-
-      <div class="social-card">
-        <i class="fab fa-instagram instagram"></i>
-        <h4>Instagram</h4>
-        <a href="https://www.instagram.com/kokan_swad_by_jadhav_bandhu" target="_blank" style="text-decoration:none; color:var(--leaf-green); font-weight:bold;">Follow Us</a>
-      </div>
-
-      <div class="social-card">
-        <i class="fab fa-facebook facebook"></i>
-        <h4>Facebook</h4>
-        <a href="https://www.facebook.com/share/17iU6Wz3hx/" target="_blank" style="text-decoration:none; color:var(--leaf-green); font-weight:bold;">Like Page</a>
-      </div>
-
-      <div class="social-card">
-        <i class="fab fa-google google"></i>
-        <h4>Google Business</h4>
-        <a href="https://share.google/hddnd6HDmCNxmkbWX" target="_blank" style="text-decoration:none; color:var(--leaf-green); font-weight:bold;">View Profile</a>
-      </div>
+    <div class="feedback-card">
+      <i class="fa-solid fa-quote-left"></i>
+      <p>खूप छान पॅकिंग आणि उत्कृष्ट दर्जा.</p>
+      <h4>- स्नेहा देशमुख</h4>
     </div>
-  </section>
+
+    <div class="feedback-card">
+      <i class="fa-solid fa-quote-left"></i>
+      <p>खऱ्या अर्थाने कोकणची चव.</p>
+      <h4>- अमोल जाधव</h4>
+    </div>
+  </div>
+</div>
+
 
   <footer>
-    <b>"कोकण स्वाद बाय जाधव बंधू |</b> जिथे चव, विश्वास आणि निसर्ग एकत्र येतो."
+    <p><span>Kokan Swad</span> | अस्सल कोकणी चव, थेट तुमच्या घरी.</p>
   </footer>
 
 </body>
-</html>v
+</html>
