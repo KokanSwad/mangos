@@ -30,7 +30,7 @@
       line-height: 1.6;
     }
 
-    /* --- MASTER HEADER (Universal Style) --- */
+    /* --- MASTER HEADER (Unchanged) --- */
     header {
       background: linear-gradient(90deg, var(--mango-yellow), var(--mango-orange));
       padding: 15px 20px;
@@ -129,10 +129,28 @@
       margin-bottom: 5px;
     }
 
-    /* --- GALLERY GRID --- */
+    /* --- CATEGORY SECTION STYLING --- */
+    .section-title {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 25px;
+        color: var(--leaf-green);
+        font-size: 28px;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: var(--mango-orange);
+        margin: 10px auto;
+    }
+
     .gallery-container {
       max-width: 1200px;
-      margin: 40px auto;
+      margin: 0 auto 40px;
       padding: 0 20px;
     }
 
@@ -185,41 +203,72 @@
       </div>
     </div>
 
-    <nav>
+     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="photos.html" class="active">Photos</a>
       <a href="newcontect.html">Contact</a>
     </nav>
-  </header>
 
   <section class="gallery-hero">
     <h2>आमची गॅलरी</h2>
     <p>आमच्या बागेतील काही खास क्षण आणि अस्सल हापूस</p>
   </section>
 
+  <h3 class="section-title">Harvesting Photographs</h3>
   <div class="gallery-container">
     <section class="gallery">
-      <img src="1000090298.png" alt="Mango">
-      <img src="1000090299.jpg" alt="Mango">
-      <img src="1000090300.jpg" alt="Mango">
-      <img src="1000090283.jpg" alt="Mango">
-      <img src="1000090284.jpg" alt="Mango">
-      <img src="1000090285.jpg" alt="Mango">
-      <img src="1000090286.jpg" alt="Mango">
-      <img src="1000090287.jpg" alt="Mango">
-      <img src="1000090278.jpg" alt="Mango">
-      <img src="1000090279.jpg" alt="Mango">
-      <img src="1000090280.jpg" alt="Mango">
-      <img src="1000090281.jpg" alt="Mango">
-      <img src="1000090282.jpg" alt="Mango">
+      <img src="1000090298.png" alt="Harvesting 1">
+      <img src="1000090299.jpg" alt="Harvesting 2">
+      <img src="1000090300.jpg" alt="Harvesting 3">
     </section>
   </div>
 
-   <footer>
+  <h3 class="section-title">Packing Photographs</h3>
+  <div class="gallery-container">
+    <section class="gallery">
+      <img src="1000090283.jpg" alt="Cutting 1">
+      <img src="1000090284.jpg" alt="Cutting 2">
+      <img src="1000090285.jpg" alt="Cutting 3">
+    </section>
+  </div>
+
+  <h3 class="section-title">Mango Cutting Photographs</h3>
+  <div class="gallery-container">
+    <section class="gallery">
+      <img src="1000090286.jpg" alt="Farm 1">
+      <img src="1000090287.jpg" alt="Farm 2">
+      <img src="1000090278.jpg" alt="Farm 3">
+    </section>
+  </div>
+
+  <h3 class="section-title">Hapus Mango Photographs</h3>
+  <div class="gallery-container">
+    <section class="gallery">
+      <img src="1000090279.jpg" alt="Alphonso 1">
+      <img src="1000090280.jpg" alt="Alphonso 2">
+      <img src="1000090281.jpg" alt="Alphonso 3">
+    </section>
+  </div>
+
+  <h3 class="section-title">आस्वाद आणि कुटुंब (Eating & Family)</h3>
+  <div class="gallery-container">
+    <section class="gallery">
+      <img src="1000090282.jpg" alt="Family 1">
+      </section>
+  </div>
+
+  <h3 class="section-title">ग्राहकांचा अभिप्राय (Feedback)</h3>
+  <div class="gallery-container">
+    <section class="gallery">
+      <img src="feedback1.jpg" alt="Feedback 1">
+      <img src="feedback2.jpg" alt="Feedback 2">
+      </section>
+  </div>
+
+  <footer>
     <b>"कोकण स्वाद बाय जाधव बंधू |</b> जिथे चव, विश्वास आणि निसर्ग एकत्र येतो."
   </footer>
 
 </body>
 </html>
-
