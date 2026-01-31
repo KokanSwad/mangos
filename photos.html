@@ -174,6 +174,21 @@
       .brand-info h1 { font-size: 18px; }
       .gallery img { height: 220px !important; }
     }
+    /* Special alignment for Feedback Section */
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: start; /* Aligns images to the top of their row */
+}
+
+.feedback-grid img {
+  width: 100%;
+  height: auto !important; /* Overrides the 280px height */
+  object-fit: contain !important; /* Shows the full image without cropping */
+  border: 2px solid #ddd;
+  background: #fff;
+}
 
     .gallery img {
       width: 100%;
@@ -281,16 +296,18 @@
 
  
   <h3 class="section-title">ग्राहकांचा अभिप्राय (Feedback)</h3>
-  <div class="gallery-container">
-    <section class="gallery">
-      <img src="feed1.jpg" alt="Feedback 1">
-      <img src="feed2.jpg" alt="Feedback 2">
-      <img src="feed3.jpg" alt="Feedback 1">
-      <img src="feed4.jpg" alt="Feedback 2">
-      <img src="feed5.jpg" alt="Feedback 1">
-      <img src="feed6.jpg" alt="Feedback 2">
-      </section>
-  </div>
+<div class="gallery-container">
+  <section class="feedback-grid"> <img src="feed1.jpg" alt="Feedback 1">
+    <img src="feed2.jpg" alt="Feedback 2">
+    <img src="feed3.jpg" alt="Feedback 3">
+    <img src="feed4.jpg" alt="Feedback 4">
+    <img src="feed5.jpg" alt="Feedback 5">
+    <img src="feed6.jpg" alt="Feedback 6">
+    <img src="feed7.jpg" alt="Feedback 4">
+    <img src="feed8.jpg" alt="Feedback 5">
+    <img src="feed9.jpg" alt="Feedback 6">
+  </section>
+</div>
 
   <footer>
     <b>"कोकण स्वाद बाय जाधव बंधू |</b> जिथे चव, विश्वास आणि निसर्ग एकत्र येतो."
